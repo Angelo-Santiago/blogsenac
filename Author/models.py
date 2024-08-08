@@ -1,14 +1,11 @@
 from django.db import models
 
-from utils.base_models import BaseModel
 
-class Authors(BaseModel):
-    nome = models.CharField(
-        max_length=50, verbose_name="Nome do Autor"
+class Author(models.Model):
+    name = models.CharField(
+        'author\'s name',
+        max_length=50
     )
+
     class Meta:
-        db_table = 'Autores'
-
-    def __str__(self):
-        return self.nome
-
+        db_table = 'authors'
